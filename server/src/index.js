@@ -15,9 +15,13 @@ connectDB()
             console.log("application not able to talk to database", error)
             throw error
         })
-        app.listen(process.env.PORT || 8000), () => {
-            console.log(`Server is running on port : ${process.env.PORT}`)
-        }
+        // app.listen(process.env.PORT || 8000), () => {
+        //     console.log(`Server is running on port : ${process.env.PORT}`)
+        // }
+        const PORT = process.env.PORT || 8000;
+        app.listen(PORT, () => {
+            console.log(`Server is running on port: ${PORT}`);
+        });
     })
     .catch((error) => {
         console.log("MongoDB connection failed !!!!!", error);
