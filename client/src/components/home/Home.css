@@ -1,0 +1,36 @@
+/* home.css */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.carousel {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel:hover {
+  animation-play-state: paused;
+}
+
+.carousel-item {
+  display: inline-block;
+  margin-right: 1rem; /* Adjust margin as needed */
+  /* Ensure the width of the items to fit within the visible area */
+}
+
+.carousel-container {
+  width: calc(
+    100% - 2rem
+  ); /* Adjust the width based on the container's size and margin */
+  box-sizing: border-box;
+}
