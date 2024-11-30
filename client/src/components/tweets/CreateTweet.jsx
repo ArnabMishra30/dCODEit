@@ -45,7 +45,7 @@ const CreateTweet = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/users/tweets/', formData, {
+      const response = await axios.post('https://dcodeit-4.onrender.com/api/v1/users/tweets/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`

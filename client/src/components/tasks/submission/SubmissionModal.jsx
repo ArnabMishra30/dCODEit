@@ -21,7 +21,7 @@ function SubmissionModal({ isOpen, onClose, task }) {
             const config = {
                 headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'multipart/form-data' },
             };
-            await axios.post(`http://localhost:8000/api/v1/task/submission/${task._id}`, formData, config);
+            await axios.post(`https://dcodeit-4.onrender.com/api/v1/task/submission/${task._id}`, formData, config);
             toast.success('Submission successful');
             onClose();  // Close the modal after successful submission
         } catch (error) {

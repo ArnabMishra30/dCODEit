@@ -33,7 +33,7 @@ function AllTweets() {
       const config = isLoggedIn
         ? { headers: { Authorization: `Bearer ${token}` } }
         : {};
-      const response = await axios.get('http://localhost:8000/api/v1/users/tweets', config);
+      const response = await axios.get('https://dcodeit-4.onrender.com/api/v1/users/tweets', config);
 
       if (response.data && Array.isArray(response.data.data)) {
         setBlogs(response.data.data);

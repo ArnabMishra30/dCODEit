@@ -2,13 +2,13 @@
 // import axios from 'axios';
 // import { toast } from 'react-toastify';
 
-// const baseURL = 'http://localhost:8000/api/v1';
+// const baseURL = 'https://dcodeit-4.onrender.com/api/v1';
 
 // export const loginUser = createAsyncThunk(
 //     'auth/loginUser',
 //     async ({ email, password, role }, { rejectWithValue }) => {
 //         try {
-//             const response = await axios.post('http://localhost:8000/api/v1/users/login', {
+//             const response = await axios.post('https://dcodeit-4.onrender.com/api/v1/users/login', {
 //                 email,
 //                 password,
 //                 role,
@@ -27,7 +27,7 @@
 //         const { auth } = getState();
 //         try {
 //             const response = await axios.post(
-//                 'http://localhost:8000/api/v1/users/logout',
+//                 'https://dcodeit-4.onrender.com/api/v1/users/logout',
 //                 {},
 //                 {
 //                     headers: {
@@ -114,7 +114,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const baseURL = 'http://localhost:8000/api/v1';
+const baseURL = 'https://dcodeit-4.onrender.com/api/v1';
 
 export const loginUser = createAsyncThunk(
     'auth/loginUser',
@@ -138,7 +138,7 @@ export const logoutUser = createAsyncThunk(
         const { auth } = getState();
         try {
             const response = await axios.post(
-                'http://localhost:8000/api/v1/users/logout',
+                'https://dcodeit-4.onrender.com/api/v1/users/logout',
                 {},
                 {
                     headers: {

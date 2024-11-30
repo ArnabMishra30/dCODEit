@@ -148,7 +148,7 @@ function Home() {
       const config = isLoggedIn
         ? { headers: { Authorization: `Bearer ${token}` } }
         : {};
-      const response = await axios.get('http://localhost:8000/api/v1/users/tweets', config); // Adjust the URL as needed
+      const response = await axios.get('https://dcodeit-4.onrender.com/api/v1/users/tweets', config); // Adjust the URL as needed
 
       if (response.data && Array.isArray(response.data.data)) {
         setBlogs(response.data.data);

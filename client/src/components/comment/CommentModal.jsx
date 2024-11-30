@@ -232,7 +232,7 @@ function CommentModal({ onClose, tweetId }) {
     const fetchComments = async () => {
         try {
             const config = isLoggedIn ? { headers: { Authorization: `Bearer ${token}` } } : {};
-            const response = await axios.get(`http://localhost:8000/api/v1/users/comments/tweetcmt/${tweetId}`, config);
+            const response = await axios.get(`https://dcodeit-4.onrender.com/api/v1/users/comments/tweetcmt/${tweetId}`, config);
             console.log('API Response:', response.data);
 
             if (response.data && response.data.data && Array.isArray(response.data.data.docs)) {
@@ -260,7 +260,7 @@ function CommentModal({ onClose, tweetId }) {
         setLoading(true);
         try {
             const config = { headers: { Authorization: `Bearer ${token}` } };
-            await axios.post(`http://localhost:8000/api/v1/users/comments/tweetcmt/${tweetId}`, { comment: commentContent }, config);
+            await axios.post(`https://dcodeit-4.onrender.com/api/v1/users/comments/tweetcmt/${tweetId}`, { comment: commentContent }, config);
             setCommentContent('');
             fetchComments(); // Refresh comments list
         } catch (error) {
@@ -278,7 +278,7 @@ function CommentModal({ onClose, tweetId }) {
         setLoading(true);
         try {
             const config = { headers: { Authorization: `Bearer ${token}` } };
-            await axios.patch(`http://localhost:8000/api/v1/users/comments/tweetcmt/update/${commentId}`, { newComment: editCommentContent }, config);
+            await axios.patch(`https://dcodeit-4.onrender.com/api/v1/users/comments/tweetcmt/update/${commentId}`, { newComment: editCommentContent }, config);
             setEditCommentContent('');
             setEditingCommentId(null);
             fetchComments(); // Refresh comments list
@@ -297,7 +297,7 @@ function CommentModal({ onClose, tweetId }) {
         setLoading(true);
         try {
             const config = { headers: { Authorization: `Bearer ${token}` } };
-            await axios.delete(`http://localhost:8000/api/v1/users/comments/tweetcmt/update/${commentId}`, config);
+            await axios.delete(`https://dcodeit-4.onrender.com/api/v1/users/comments/tweetcmt/update/${commentId}`, config);
             fetchComments(); // Refresh comments list
         } catch (error) {
             console.error('Error deleting comment:', error);
@@ -314,7 +314,7 @@ function CommentModal({ onClose, tweetId }) {
         setLoading(true);
         try {
             const config = { headers: { Authorization: `Bearer ${token}` } };
-            await axios.post(`http://localhost:8000/api/v1/users/comments/replies/${parentCommentId}`, { comment: replyContent }, config);
+            await axios.post(`https://dcodeit-4.onrender.com/api/v1/users/comments/replies/${parentCommentId}`, { comment: replyContent }, config);
             setReplyContent('');
             fetchComments(); // Refresh comments list
         } catch (error) {

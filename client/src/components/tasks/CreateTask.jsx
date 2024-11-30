@@ -37,11 +37,11 @@ const CreateTask = ({ isOpen, onClose, task }) => {
 
             if (isUpdating) {
                 // Update existing task
-                await axios.patch(`http://localhost:8000/api/v1/task/${task._id}`, data, config);
+                await axios.patch(`https://dcodeit-4.onrender.com/api/v1/task/${task._id}`, data, config);
                 toast.success('Task updated successfully');
             } else {
                 // Create new task
-                await axios.post('http://localhost:8000/api/v1/task', data, config);
+                await axios.post('https://dcodeit-4.onrender.com/api/v1/task', data, config);
                 toast.success('Task created successfully');
             }
             onClose(); // Close the modal

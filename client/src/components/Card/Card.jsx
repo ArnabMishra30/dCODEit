@@ -152,7 +152,7 @@ function Card({ title, content, image, onReadMore, tweetId }) {
             if (isLoggedIn) {
                 try {
                     const config = { headers: { Authorization: `Bearer ${token}` } };
-                    const response = await axios.get(`http://localhost:8000/api/v1/likes/tweets/${tweetId}/isLiked`, config);
+                    const response = await axios.get(`https://dcodeit-4.onrender.com/api/v1/likes/tweets/${tweetId}/isLiked`, config);
                     if (response.data.liked !== undefined) {
                         setLiked(response.data.liked);
                     }
@@ -168,7 +168,7 @@ function Card({ title, content, image, onReadMore, tweetId }) {
         if (isLoggedIn) {
             try {
                 const config = { headers: { Authorization: `Bearer ${token}` } };
-                const response = await axios.post(`http://localhost:8000/api/v1/likes/toggle/t/${tweetId}`, {}, config);
+                const response = await axios.post(`https://dcodeit-4.onrender.com/api/v1/likes/toggle/t/${tweetId}`, {}, config);
                 // console.log(response);
                 if (response.status === 201 || response.status === 200) {
                     setLiked(prevLiked => !prevLiked);

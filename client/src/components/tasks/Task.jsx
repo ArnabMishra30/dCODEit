@@ -30,7 +30,7 @@ function Task() {
     const fetchTasks = async () => {
         try {
             const config = isLoggedIn ? { headers: { Authorization: `Bearer ${token}` } } : {};
-            const response = await axios.get('http://localhost:8000/api/v1/task', config);
+            const response = await axios.get('https://dcodeit-4.onrender.com/api/v1/task', config);
 
             if (response.data && Array.isArray(response.data.data)) {
                 setTasks(response.data.data);
@@ -70,7 +70,7 @@ function Task() {
             const config = {
                 headers: { Authorization: `Bearer ${token}` },
             };
-            await axios.delete(`http://localhost:8000/api/v1/task/${taskId}`, config);
+            await axios.delete(`https://dcodeit-4.onrender.com/api/v1/task/${taskId}`, config);
             toast.success('Task deleted successfully');
             setTasks(tasks.filter((task) => task._id !== taskId));
         } catch (error) {
@@ -100,7 +100,7 @@ function Task() {
             const config = {
                 headers: { Authorization: `Bearer ${token}` },
             };
-            const response = await axios.get(`http://localhost:8000/api/v1/task/submission/answer/${task._id}`, config);
+            const response = await axios.get(`https://dcodeit-4.onrender.com/api/v1/task/submission/answer/${task._id}`, config);
             setSubmissions(response.data.data);
             setIsShowAnswersModalOpen(true);
         } catch (error) {

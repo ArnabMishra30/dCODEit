@@ -32,7 +32,7 @@ function UserTweet() {
             const config = {
                 headers: { Authorization: `Bearer ${token}` },
             };
-            const response = await axios.get(`http://localhost:8000/api/v1/users/tweets/user/${currentUser._id}`, config);
+            const response = await axios.get(`https://dcodeit-4.onrender.com/api/v1/users/tweets/user/${currentUser._id}`, config);
 
             if (response.data && Array.isArray(response.data.data)) {
                 setBlogs(response.data.data);
@@ -93,7 +93,7 @@ function UserTweet() {
     //         const config = {
     //             headers: { Authorization: `Bearer ${token}` },
     //         };
-    //         const response = await axios.delete(`http://localhost:8000/api/v1/users/tweets/${tweetId}`, config);
+    //         const response = await axios.delete(`https://dcodeit-4.onrender.com/api/v1/users/tweets/${tweetId}`, config);
     //         if (response.data && response.data.status === 200) {
     //             setBlogs((prevBlogs) => prevBlogs.filter(blog => blog._id !== tweetId));
     //             toast.success('Tweet deleted successfully');
@@ -110,7 +110,7 @@ function UserTweet() {
             const config = {
                 headers: { Authorization: `Bearer ${token}` },
             };
-            const response = await axios.delete(`http://localhost:8000/api/v1/users/tweets/${tweetId}`, config);
+            const response = await axios.delete(`https://dcodeit-4.onrender.com/api/v1/users/tweets/${tweetId}`, config);
             if (response.data && response.data.success) {
                 setBlogs((prevBlogs) => prevBlogs.filter(blog => blog._id !== tweetId));
                 toast.success('Tweet deleted successfully');

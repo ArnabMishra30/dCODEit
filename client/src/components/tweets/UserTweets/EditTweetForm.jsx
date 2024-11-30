@@ -24,7 +24,7 @@
 
 //     const fetchTweet = async () => {
 //         try {
-//             const response = await axios.get(`http://localhost:8000/api/v1/users/tweets/${tweetId}`, {
+//             const response = await axios.get(`https://dcodeit-4.onrender.com/api/v1/users/tweets/${tweetId}`, {
 //                 headers: {
 //                     Authorization: `Bearer ${token}`,
 //                 },
@@ -61,7 +61,7 @@
 //         }
 
 //         try {
-//             const response = await axios.patch(`http://localhost:8000/api/v1/users/tweets/${tweetId}`, formData, {
+//             const response = await axios.patch(`https://dcodeit-4.onrender.com/api/v1/users/tweets/${tweetId}`, formData, {
 //                 headers: {
 //                     'Content-Type': 'multipart/form-data',
 //                     'Authorization': `Bearer ${token}`
@@ -169,7 +169,7 @@ const EditTweetForm = () => {
 
     const fetchTweet = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/v1/users/tweets/${tweetId}`, {
+            const response = await axios.get(`https://dcodeit-4.onrender.com/api/v1/users/tweets/${tweetId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -205,7 +205,7 @@ const EditTweetForm = () => {
         }
 
         try {
-            const response = await axios.patch(`http://localhost:8000/api/v1/users/tweets/${tweetId}`, formData, {
+            const response = await axios.patch(`https://dcodeit-4.onrender.com/api/v1/users/tweets/${tweetId}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${token}`
