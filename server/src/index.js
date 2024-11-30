@@ -15,12 +15,12 @@ connectDB()
             console.log("application not able to talk to database", error)
             throw error
         })
-        // app.listen(process.env.PORT || 8000), () => {
-        //     console.log(`Server is running on port : ${process.env.PORT}`)
-        // }
         const PORT = process.env.PORT || 4000;
-        app.listen(PORT, () => {
-            console.log(`Server is running on port: ${PORT}`);
+        // app.listen(PORT, () => {
+        //     console.log(`Server is running on port: ${PORT}`);
+        // });
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`Server is running on http://0.0.0.0:${PORT}`);
         });
     })
     .catch((error) => {
